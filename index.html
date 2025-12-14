@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Year Party Invite 🎉</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(14px);
+      border-radius: 24px;
+      padding: 42px 32px;
+      max-width: 440px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.45);
+      animation: fadeIn 1.6s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 2.3rem;
+      margin-bottom: 12px;
+    }
+
+    h1 span {
+      color: #ffd369;
+    }
+
+    .names {
+      margin-top: 10px;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    p {
+      font-size: 1.05rem;
+      margin: 16px 0;
+      line-height: 1.6;
+      opacity: 0.95;
+    }
+
+    .date-box {
+      margin: 24px 0 14px;
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.18);
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .details {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      margin-top: 22px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 26px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-yes {
+      background: #ffd369;
+      color: #222;
+    }
+
+    .btn-no {
+      background: rgba(255, 255, 255, 0.25);
+      color: #fff;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+    }
+
+    .response {
+      margin-top: 18px;
+      font-size: 1rem;
+      font-weight: 500;
+      min-height: 24px;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 0.85rem;
+      opacity: 0.75;
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #ffd369;
+      animation: fall 5s linear infinite;
+      opacity: 0.85;
+    }
+
+    .music-btn {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      backdrop-filter: blur(6px);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(22px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-100vh) rotate(0deg); }
+      100% { transform: translateY(100vh) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Confetti -->
+  <div class="confetti" style="left:8%; animation-delay:0s"></div>
+  <div class="confetti" style="left:22%; animation-delay:1s"></div>
+  <div class="confetti" style="left:36%; animation-delay:2s"></div>
+  <div class="confetti" style="left:50%; animation-delay:0.6s"></div>
+  <div class="confetti" style="left:64%; animation-delay:1.4s"></div>
+  <div class="confetti" style="left:78%; animation-delay:2.2s"></div>
+  <div class="confetti" style="left:92%; animation-delay:0.9s"></div>
+
+  <!-- Background Music -->
+  <audio id="bgMusic" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="card">
+    <button class="music-btn" onclick="toggleMusic()">🔊 Music</button>
+
+    <h1>✨ New Year Party ✨</h1>
+
+    <div class="names">
+      Special invite for <br />
+      <strong>Suhana · Ridham · Rishika</strong> 💛
+    </div>
+
+    <p>
+      One year ends, another begins —
+      and it wouldn’t feel right without all of you.
+      Let’s laugh, dance, and make memories worth repeating.
+    </p>
+
+    <div class="date-box">📅 27th December</div>
+
+    <div class="details">
+      ⏰ Time: Evening onwards<br />
+      📍 Location: To be revealed 😉<br />
+      👗 Dress Code: Party vibes only ✨
+    </div>
+
+    <p>
+      So tell me honestly…
+      will you be there when the party begins?
+    </p>
+
+    <div class="buttons">
+      <button class="btn btn-yes" onclick="replyYes()">Yes, I'm In 🎉</button>
+      <button class="btn btn-no" onclick="replyNo()">I’ll Try 😅</button>
+    </div>
+
+    <div class="response" id="response"></div>
+
+    <div class="footer">
+      New year, same crazy friends 💫<br />
+      Let’s make this one unforgettable.
+    </div>
+  </div>
+
+  <script>
+    const music = document.getElementById('bgMusic');
+    let playing = false;
+
+    function toggleMusic() {
+      if (!playing) {
+        music.play();
+        playing = true;
+      } else {
+        music.pause();
+        playing = false;
+      }
+    }
+
+    function replyYes() {
+      document.getElementById('response').innerText = 'Yayyy! 🎊 This party just got better 😍';
+    }
+
+    function replyNo() {
+      document.getElementById('response').innerText = 'No pressure 😄 Just don’t disappear!';
+    }
+  </script>
+
+</body>
+</html>
